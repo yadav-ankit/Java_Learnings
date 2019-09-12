@@ -1,7 +1,11 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
+import java.util.Set;
+import java.util.TreeSet;
 
  class Baloon {
 
@@ -47,6 +51,12 @@ public class RunClass {
 	public static void main(String... sortingWithList) {
 		List<Baloon> myList = new ArrayList<Baloon>();
 		
+		Set<Baloon> b = new TreeSet<Baloon>();
+		
+		List<Baloon> myssList = new LinkedList<Baloon>();
+		Queue<Integer> q = new LinkedList<Integer>();
+		
+		//myList.add()		
 		myList.add(new Baloon(3));
 		myList.add(new Baloon(5));
 		myList.add(new Baloon(2));
