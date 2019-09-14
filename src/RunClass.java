@@ -71,6 +71,10 @@ public class RunClass {
 		
 		//myList.stream().map(s -> System.out.println(s.getSize()));
 		
-		myList.forEach((key) -> System.out.println(key.getSize() ));
+		
+		myList.forEach(d -> {
+			System.out.println(d.getName());
+		});
+		
 	}
 }
