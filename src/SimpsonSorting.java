@@ -1,7 +1,9 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.function.Consumer;
 
 class Person implements Comparable<Person> {
@@ -64,10 +66,31 @@ public class SimpsonSorting {
         persons.add(new Person("Lisa " , 9));
         
         
+        
+        List<String> list = new  CopyOnWriteArrayList<String>();// ArrayList<String>();
+        
+        list.add("add");
+        
+        list.add("yehlo");
+        
+        list.add("popo");
+        
+        list.add("apple");
+        
+        
+        Iterator<String> it = list.iterator();
+        
+        while(it.hasNext()) {
+        	
+        //	System.out.println(it.next());
+        	
+        	list.add("ankit");
+        }
+        
         Test t = new Test();
         
         Collections.sort(persons);
-        persons.stream().forEach(System.out::println);
+       // persons.stream().forEach(p -> System.out.println(p.name + " " + p.x));
         
         Collections.sort(persons,t);
         
@@ -90,7 +113,7 @@ class MyConsumer implements Consumer<Person>{
 
 	@Override
 	public void accept(Person s) {
-		System.out.println(s.getName() + " " + s.getX());
+	//	System.out.println(s.getName() + " " + s.getX());
 		
 	}
 }

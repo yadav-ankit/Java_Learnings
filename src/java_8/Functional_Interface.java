@@ -3,10 +3,11 @@ package java_8;
 // SAM : Single Abstract method . No matter how many default methods you define
 interface Sample{
 	
+	// Writing abstract is optional
 	abstract  public int play(int y);
 
-	
-	public default int test() {
+	// Writing default is mandatory
+	public default  int test() {
 		return 35;
 	}
 	
@@ -24,12 +25,25 @@ interface Sample{
 	
 	
 }
-public class Functional_Interface {
+public class Functional_Interface extends AbstractClass{
 
 	public static void main(String[] args) {
 		Sample s  = (x) -> x*x; 
 
 		System.out.println(s.play(32));
+	
+	AbstractClass ab = new Functional_Interface(); 
+	
+	
 	}
 
+}
+
+abstract class AbstractClass{
+	
+	public void sing() {
+		System.out.println("cycycy");
+	}
+	
+	
 }

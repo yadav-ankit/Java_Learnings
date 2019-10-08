@@ -73,8 +73,8 @@ public class RunClass {
 		
 		
 		myList.forEach(d -> {
-			System.out.println(d.getName());
+//			System.out.println(d.getName());
 		});
-		
+	
 	}
 }
