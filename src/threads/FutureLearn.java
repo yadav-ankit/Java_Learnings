@@ -1,0 +1,76 @@
+package threads;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+public class FutureLearn {
+
+	public static void main(String... args) throws InterruptedException, ExecutionException {
+
+		Sample s = new Sample();
+		s.startPlaying(s);
+	}
+}
+
+class Offer implements Runnable{
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+		System.out.println(" -----");
+	}
+
+	
+}
+
+class Sample implements Callable<Sample>{
+
+	int x;
+	String y;
+
+	@Override
+	public Sample call() throws Exception {
+
+		Sample s = new Sample();
+		s.x = 3;
+		s.y = "ankit";
+
+		Thread.currentThread();
+		Thread.sleep(5000);
+
+		return s;
+	}
+
+	public void startPlaying(Sample task) throws InterruptedException, ExecutionException {
+
+		ExecutorService ex = Executors.newFixedThreadPool(4);
+		
+		// This will use Thread again and when they r available
+		ExecutorService ex2 = Executors.newCachedThreadPool();
+
+		Future<Sample> future = ex.submit(task);
+
+		// Result will come in 5 seconds
+		
+		if (future.isDone()) {
+			System.out.println(future.get().x + " " + future.get().y);
+		} else {
+			System.out.println("Ye to pehle print ho jaaega");
+		}
+		System.out.println(future.get().x + " " + future.get().y);
+		
+		
+		for(int i=1;i<1000;i++) {
+			ex2.execute(new Offer());
+			System.out.println(i);
+		}
+		
+		ex.shutdown();
+	
+		
+	}
+}

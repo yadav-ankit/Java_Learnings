@@ -1,4 +1,4 @@
-package mainPackae;
+package threads;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -16,7 +16,15 @@ public class ThreadPool implements Runnable,ThreadFactory,Callable<ThreadPool> {
 
 	public static ReentrantLock ren = new ReentrantLock();
 	
-	ThreadFactory th;
+	ThreadFactory th = new ThreadFactory() {
+		
+		@Override
+		public Thread newThread(Runnable r) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+	};
+	
 	
 	ThreadPoolExecutor tll;
 	
@@ -28,7 +36,9 @@ public class ThreadPool implements Runnable,ThreadFactory,Callable<ThreadPool> {
 		
 		boolean tryLockAcquired = ren.tryLock(5, TimeUnit.SECONDS);
 		try {
-			
+			if(tryLockAcquired) {
+				
+			}
 		}
 		// faltu code
 		finally {
@@ -76,11 +86,30 @@ public class ThreadPool implements Runnable,ThreadFactory,Callable<ThreadPool> {
 			}
 		});
 		
+		t2.start();
+		
+		 new Thread(new Runnable() {
+				
+				
+				@Override
+				public void run() {
+					
+				}
+			}).start();
 		
 		int x = Runtime.getRuntime().availableProcessors();
 		
-			ExecutorService rr = Executors.newFixedThreadPool(x);
+		ExecutorService rr = Executors.newFixedThreadPool(x);
 			
+		System.gc();
+		
+		Runtime gfg = Runtime.getRuntime();
+		
+		
+		
+		gfg.gc();
+		System.out.println(gfg.totalMemory() + " " + gfg.freeMemory());
+		
 		
 		Callable<ThreadPool> callable = new ThreadPool();
 		Callable<String> callable1 = new Callable<String>() {
