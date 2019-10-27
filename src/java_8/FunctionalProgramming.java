@@ -5,6 +5,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+/* for Predicates see mainPackage/FilesRead
+ * 
+ */
+
 public class FunctionalProgramming {
 
 	public static void main(String[] args) {
