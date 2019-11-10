@@ -33,6 +33,15 @@ class Person implements Comparable<Person> {
     @Override
     public boolean equals(Object o) {
     	
+    	if(o == null)
+    		return false;
+    	
+    	if(!(o instanceof Person)) {
+			return false;
+			
+		}
+    	Person new_name = (Person) o;
+    	
     	Person s = (Person)o;
     	
 		return this.name == s.name;

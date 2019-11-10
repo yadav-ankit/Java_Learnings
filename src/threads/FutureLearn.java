@@ -6,6 +6,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+// Future and callable goes hands in Hand
 public class FutureLearn {
 
 	public static void main(String... args) throws InterruptedException, ExecutionException {
@@ -22,6 +23,22 @@ class Offer implements Runnable{
 		// TODO Auto-generated method stub
 		
 		System.out.println(" -----");
+		
+		// 3 8 2 9 9 1 2 3 9 1 7 4 1 2 2 3
+		int i,j;
+		int arr[] = new int[100];
+		int n= 100;
+		int sum = 0;
+		
+		
+		for(i=0;i<n;i++) {
+			for(j=i+1;j<n;j++) {
+				if(j-1>1) {
+					sum = sum + arr[j];
+					j=i;
+				}
+			}
+		}
 	}
 
 	

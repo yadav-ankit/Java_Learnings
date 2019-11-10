@@ -33,8 +33,16 @@ public class ExceptionLearn implements  Cloneable{
 		System.out.println(ey.getVal());
 	}
 	
-	public static void main(String...args) throws NullPointerException, InterruptedException, CloneNotSupportedException {
+	public static void main(String...args) throws NullPointerException, 
+													InterruptedException, 
+													CloneNotSupportedException, 
+													InstantiationException, 
+													IllegalAccessException, 
+													ClassNotFoundException {
 		test();
+		
+		ExceptionLearn ex = (ExceptionLearn)Class.forName("ExceptionLearn").newInstance();
+		
 	}
 
 

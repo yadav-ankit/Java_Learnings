@@ -49,6 +49,9 @@ public class FunctionalProgramming {
 		Double u = 89.98987877;
 		Long c = u.longValue();		
 		long y = z.longValue();  //convert Integer to Long
+		
+		int xx = 10;
+		long yy = xx;
 	}
 
 }

@@ -20,7 +20,8 @@ public class SerializationSamle implements Serializable {
 		String filePath = "C:\\\\Users\\\\ankyadav\\\\Downloads\\\\Readable\\\\new4.txt";
 		SerializationSamle obj = new SerializationSamle();
 		FileOutputStream file;
-		ObjectOutputStream out;
+		ObjectOutp
+		utStream out;
 
 		obj.id = 3;
 		obj.username = "ankit";
