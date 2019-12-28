@@ -30,8 +30,7 @@ public class Test {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		
+	
 		Test t1 = new Test("ankit",23);
 		Test t2 = new Test("hemant",23);
 		

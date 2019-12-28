@@ -1,5 +1,5 @@
 
-public class ThreadLearn {
+public class EvenOddPrint {
 	
 	public static void main(String[] args) throws InterruptedException  {
 		int arr[] = new int[20];

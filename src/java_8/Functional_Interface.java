@@ -1,6 +1,6 @@
 package java_8;
 
-// SAM : Single Abstract method . No matter how many default methods you define
+// SAM : Single Abstract method . No matter how many default methods you define(0..1..2..3..4..5)
 interface Sample{
 	
 	// Writing abstract is optional

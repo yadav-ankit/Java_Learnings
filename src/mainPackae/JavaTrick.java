@@ -10,7 +10,7 @@ import java.util.List;
  * 2: ngOninit( ) and ngOnChange( ) Constructor( )
  * 3: * in ngIf
  * 4: REST security
- * 5: Views and types of views
+ * 5: Views and types of views in DB
  * 6: Types of directives
  * 7: Bean creation one after the other
  * 8: Session works in HTTP
@@ -18,10 +18,17 @@ import java.util.List;
  * 10: How do you maintain session in Spring(JWT,Cookies) & what's the purpose of that session.
  * 11: Access modifier in Angular
  * 12: new keyword ...interface and class in Angular.
+ * 13: Sequence in DB
+ * 14: Filters in JAVA Servlets types of filters
+ * 15: Schema vs Database
+ * 
  * 
  */
 public class JavaTrick {
 
+	public boolean isValid() {
+		return true;
+	}
 	
 	public void test() {
 		
@@ -46,6 +53,13 @@ public class JavaTrick {
 	public static void main(String[] args)  {
 		
 		JavaTrick j = new JavaTrick();
+		
+		
+		
+		List<JavaTrick> apiItems = new ArrayList<JavaTrick>();
+		
+		
+		long v = apiItems.stream().filter(x -> x.isValid()).count();
 		
 		j.sum(3, 4);
 
