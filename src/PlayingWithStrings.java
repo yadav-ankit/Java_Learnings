@@ -11,6 +11,8 @@ public class PlayingWithStrings {
 		    String s4 = new String("abc");	//	Address c
 		    String s5= "abc";	//	Address a
 		    String s6 = s1.substring(1);	//	Address D will create new string
+		    
+		    s1 = s1.substring(1);  // Old s1 is discared for GC
 
 		    System.out.println(Integer.toHexString(s1.hashCode()));
 		    System.out.println(Integer.toHexString(s2.hashCode()));
