@@ -12,28 +12,7 @@ public class RegularExpression {
 	public Boolean validate(String employeeID) throws IOException {
 
 		String onlyDigits = "\\d+";
-
-		if (employeeID.length() < 5 || employeeID.length() > 7)
-			return false;
-
-		if (employeeID.length() == 5)
-			return employeeID.matches(onlyDigits);
-		else if (employeeID.length() == 6) {
-
-			List<Character> listt = Arrays.asList('K', 'X', 'U', 'S', 'C');
-
-			Boolean cond1 = listt.contains(employeeID.charAt(0));
-
-			Boolean cond2 = employeeID.substring(1).matches(onlyDigits);
-
-			return (cond1 && cond2);
-		} else if (employeeID.length() == 7) {
-			Boolean cond1 = employeeID.substring(0, 2).equals("CX");
-
-			Boolean cond2 = employeeID.substring(2).matches(onlyDigits);
-
-			return (cond1 && cond2);
-		}
+		
 
 		return false;
 
