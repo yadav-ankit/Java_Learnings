@@ -97,14 +97,12 @@ public class SimpsonSorting {
         	list.add("ankit");
         }
         
-        Test t = new Test();
+        Test test = new Test();
         
-        Collections.sort(persons);
+        Collections.sort(persons,test);
        // persons.stream().forEach(p -> System.out.println(p.name + " " + p.x));
         
-        Collections.sort(persons,t);
-        
-        
+        Collections.sort(persons);
         
         persons.stream().forEach(System.out::println);
         

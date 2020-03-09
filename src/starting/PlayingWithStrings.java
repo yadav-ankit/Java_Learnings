@@ -11,7 +11,7 @@ public class PlayingWithStrings {
 		    String s3= "abc"; 	//	Address a
 		    String s4 = new String("abc");	//	Address c
 		    String s5= "abc";	//	Address a
-		    String s6 = s1.substring(1);	//	Address D will create new string
+		    String s6 = s1.substring(1);	//	Address D will create new string...old string is eligible for GC
 		    
 		    s1 = s1.substring(1);  // Old s1 is discared for GC
 
