@@ -1,6 +1,8 @@
 package collections;
 
 import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
 import java.util.TreeSet;
 
 import mainPackae.Person;
@@ -13,7 +15,9 @@ public class TreeSetLearn {
 		Person p2 = new Person(3, "Yadav");
 		Person p3 = new Person(4, "Minal");
 
-		TreeSet<Person> tree = new TreeSet<Person>();
+		
+		List<String> trees = null;
+		Set<Person> tree = new TreeSet<Person>();
 
 		try {
 			tree.add(p);
@@ -21,7 +25,7 @@ public class TreeSetLearn {
 			tree.add(p2);
 			tree.add(p3);
 			
-			Iterator<Person> it = tree.descendingIterator();
+			Iterator<Person> it = ((TreeSet<Person>) tree).descendingIterator();
 			
 			while(it.hasNext()) {
 				System.out.println(it.next().getAge());
