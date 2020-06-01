@@ -42,6 +42,8 @@ public class CommentsJAVA {
 		 for(List<Integer> s: setans) {
 			 ans.add(s);
 		 }
+		 
+		 8: Two D Matrix and Collections.sort and Collections.binarySearch()
 	 *   
 	 *
 	 */
@@ -86,6 +88,11 @@ public class CommentsJAVA {
 		// Queue
 		Queue<Integer> q = new LinkedList<Integer>();
 		
+		PriorityQueue<Integer> pq = new PriorityQueue<Integer>();   //min heap
+		
+		pq.add(33);
+		pq.offer(1);
+		
 		//Deque
 		Deque<Integer> dq = new LinkedList<Integer>();
 		 
@@ -125,6 +132,32 @@ public class CommentsJAVA {
 		 
 		 
 		 // Map HashMap , TreeMap , LinkedHashMap
+	}
+	
+	private static void eight(int arr[][],int ele) {
+		
+		int rows = arr.length;
+		int cols = arr[0].length;
+		
+		for(int i=0;i<rows;i++) {
+			for(int j=0;j<cols;j++) {
+				System.out.println(arr[i][j]);
+			}
+		}
+		
+		List<Integer> list = new ArrayList<>();
+		
+		list.add(34);
+		list.add(22);
+		list.add(98);
+		
+		Collections.sort(list);
+		
+		int index = Collections.binarySearch(list, 77);
+		
+		if(index>=0) {
+			System.out.println("Found is true");
+		}
 	}
 	
 }
