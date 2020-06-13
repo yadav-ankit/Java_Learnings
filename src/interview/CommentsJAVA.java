@@ -94,6 +94,7 @@ public class CommentsJAVA {
 
 		// Stack
 		Stack<Integer> s = new Stack<Integer>();
+		Stack<Character> st = new Stack<Character>();
 		s.push(22);
 		s.pop();
 
@@ -145,7 +146,7 @@ public class CommentsJAVA {
 
 	private static void playWithHashing(String s) {
 		String ans = null;
-		
+
 		int hash[] = new int[95];
 
 		for (int i = 0; i < s.length(); i++) {
@@ -153,16 +154,44 @@ public class CommentsJAVA {
 		}
 		int index = 0;
 
-		char c = (char) (index + 65);  //char to String
+		char c = (char) (index + 65); // char to String
 		ans = String.valueOf(c);
 	}
-	
+
 	private static String sortAString(String given) {
-		
+
 		char arr[] = given.toCharArray();
 		Arrays.sort(arr);
 		return String.valueOf(arr);
 	}
 
-	
+	private static void capitaliseFirstChar(String s) {
+
+		// input I am the best
+		// Output I Am The Best
+
+		String arr[] = s.split("\\|");
+
+		String ans = "";
+		for (int i = 0; i < arr.length; i++) {
+			String temp = arr[i].substring(0, 1).toUpperCase() + arr[i].substring(1);
+			if (i == 0) {
+				ans = ans + temp;
+			} else {
+				ans = ans + " " + temp;
+			}
+		}
+
+	}
+
+	private static void convertCollections(List<String> given) {
+		
+		// list to set
+   	Set<String> set = new HashSet<String>(given);
+   	
+   		// set to arrayList
+   	ArrayList<String> newAns = new ArrayList<>(set);
+   	
+		    
+	}
 }

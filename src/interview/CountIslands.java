@@ -1,5 +1,7 @@
 package interview;
 
+import java.io.IOException;
+
 public class CountIslands {
 
 	private static int rowTravel[] = {-1,1,0,0};
@@ -51,7 +53,7 @@ public class CountIslands {
 		return count;
 	}
 
-	public static void main(String... args) {
+	public static void main(String... args) throws Exception {
 
 		// String s =
 		// "1000.50|abc|?|12334|VISA|MYR|2020-06-09T11:51:12+08:00|7137|CC|CCPS_001|IPC|9999999999";
@@ -66,7 +68,51 @@ public class CountIslands {
 				{'0','0','0','1','1'}
 		};
 		
-		System.out.println(numIslands(arr));
+		//System.out.println(numIslands(arr));
 
+		String x = "122";
+		String y = "12";
+		
+	//	System.out.println(null != x ? x.length() > 35 ? x.substring(0, 35) : x : "");
+		
+		doSomething();
+		
+		int a = err();
+		
+		System.out.println(a);
 	}
+	
+	private static void doSomething() {
+		
+		String temp[] = {"a","b","c"};
+	}
+	
+	static int err() throws Exception {
+
+		try
+		{ 
+		    throw new IOException("..");
+
+		}
+		catch(RuntimeException e)
+		{
+		    throw new RuntimeException(e);
+
+		}
+		finally
+		{
+		    return -1;
+		}
+		}
 }
+interface Syrupable { 
+ void getSugary(); 
+ }
+ abstract class Pancake implements Syrupable { } 
+ 
+ class BlueBerryPancake implements Pancake { 
+     public void getSugary() { ; } 
+ } 
+ class SourdoughBlueBerryPancake extends BlueBerryPancake { 
+     void getSugary(int s) { ; } 
+ }
