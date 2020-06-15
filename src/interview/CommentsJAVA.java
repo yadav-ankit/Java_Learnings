@@ -1,10 +1,8 @@
 package interview;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
+import java.io.*;
 import java.util.*;
+
 
 public class CommentsJAVA {
 
@@ -27,8 +25,8 @@ public class CommentsJAVA {
 	 * 
 	 * 7: Iterate set of List<Integer>
 	 * 
-	 * Set<List<Integer>> setans = new HashSet(); List<List<Integer>> ans = new
-	 * ArrayList<>();
+	 * Set<List<Integer>> setans = new HashSet(); 
+	 * List<List<Integer>> ans = new ArrayList<>();
 	 * 
 	 * for(List<Integer> s: setans) { ans.add(s); }
 	 * 
@@ -36,6 +34,10 @@ public class CommentsJAVA {
 	 * 
 	 *
 	 */
+
+	public static void main(String... strings) {
+
+	}
 
 	private static void swap(int arr[], int i, int j) {
 		int c = arr[i];
@@ -185,13 +187,81 @@ public class CommentsJAVA {
 	}
 
 	private static void convertCollections(List<String> given) {
-		
+
 		// list to set
-   	Set<String> set = new HashSet<String>(given);
-   	
-   		// set to arrayList
-   	ArrayList<String> newAns = new ArrayList<>(set);
-   	
-		    
+		Set<String> set = new HashSet<String>(given);
+
+		// set to arrayList
+		ArrayList<String> newAns = new ArrayList<>(set);
+
+	}
+
+	private static void alwaysUseForEach(int arr[]) {
+		List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
+
+		for (int a : list) {
+			System.out.println(a);
+		}
+		for (int a : arr) {
+			System.out.println(a);
+		}
+	}
+
+	private static void countInArray(int arr[]) {
+
+		// You can also use Hash Array but if array elements are -ve then use HashMap
+		// you can iterate all values using hm.keySet()
+		Map<Integer, Integer> hm = new HashMap<Integer, Integer>();
+
+		for (int a : arr) {
+			hm.put(a, hm.getOrDefault(a, 0) + 1);
+		}
+
+		for (int a : hm.keySet()) {
+			System.out.println(a);
+		}
+	}
+
+	private static void allAboutpriorityQuueue(int arr[]) {
+		Map<Integer, Integer> count = new HashMap<Integer, Integer>();
+
+		for (int a : arr) {
+			count.put(a, count.getOrDefault(a, 0) + 1);
+		}
+
+		/* By default heap is sorted in ascending order.
+		 * So the most priority element in below Q is having lowest count.
+		 * Yes Heap can contain Duplicate values
+		 * If you want descending order use Collections.ReverseOrder();
+		 * 
+		 * For having a class use compareTo method as shown below plain and simple.
+		 * Remember this.count - e.count; Sorted Asc.
+		 * 
+		 */
+		Queue<Integer> heap = new PriorityQueue<>((a, b) -> count.get(a) - count.get(b));
+		Queue<Element> elementHeap = new PriorityQueue<>();
+		
+		for (int a : arr) {
+			count.put(a, count.getOrDefault(a, 0) + 1);
+			
+			Element e = new Element();
+			e.ele = a;
+			e.count = count.get(a);
+			
+			elementHeap.add(e);
+		}
+		
+		
+	}
+}
+
+class Element implements Comparable<Element> {
+
+	int ele;
+	int count;
+
+	@Override
+	public int compareTo(Element e) {
+		return this.count - e.count;
 	}
 }

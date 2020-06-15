@@ -52,7 +52,6 @@ public class JavaStreams {
 	//	long count = list.parallelStream().filter(s -> s.isEmpty()).count();
 		
 		list.stream().filter(s -> s.length()>0).forEach(s -> firstCapitalise(s));
-		
 	}
 	
 	private void firstCapitalise(String s) {
