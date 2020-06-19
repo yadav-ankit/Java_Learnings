@@ -1,11 +1,15 @@
 package interview.Real;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Test4 {
 	final int num = 10;
 
 	static void display() {
 		Runnable r = new Runnable() {
 			final int num = 15;
+
 			@Override
 			public void run() {
 				int num = 20;
@@ -15,8 +19,10 @@ public class Test4 {
 		r.run();
 	}
 
+
+
 	public static void main(String[] args) {
-		display();
+		 display();
 	}
 
 }
