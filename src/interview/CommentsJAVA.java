@@ -32,11 +32,35 @@ public class CommentsJAVA {
 	 * 
 	 * 8: Two D Matrix and Collections.sort and Collections.binarySearch()
 	 * 
+	 * 9: Count Sort
+	 *	 for(int i=n-1;i>=0;i--){
+            output[count[arr[i]]-1] = arr[i];
+            --count[arr[i]];
+        }
+	 * 
+	 * 10: Pass array as a pramater without declaring it
+	 * private getBill(int arr1[],int arr2[]);
+	 * System.out.println(cashier.getBill(new int[] {1,2}, new int[] {1,2}));
 	 *
 	 */
 
 	public static void main(String... strings) {
 
+		//Conversions
+		
+		// char to int
+		char c = 'r';
+		int x = Integer.parseInt(String.valueOf(c));
+		System.out.println(x);
+		
+		// String to int
+		int a = Integer.parseInt("anything");
+		
+		//int to char
+		char ch = 234;
+		System.out.println(ch);
+		
+		
 	}
 
 	private static void swap(int arr[], int i, int j) {
@@ -57,6 +81,14 @@ public class CommentsJAVA {
 			}
 		}
 		str = String.valueOf(arr);
+		
+		// OR
+		
+		StringBuffer s = new StringBuffer(str);
+		
+		s.setCharAt(3, 'D');
+		
+		str = s.toString();
 	}
 
 	private static void takeInput() throws IOException {
