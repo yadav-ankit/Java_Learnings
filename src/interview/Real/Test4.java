@@ -1,8 +1,5 @@
 package interview.Real;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class Test4 {
 	final int num = 10;
 
