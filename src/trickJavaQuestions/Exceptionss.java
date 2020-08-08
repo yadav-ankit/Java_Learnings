@@ -43,7 +43,7 @@ public class Exceptionss {
 	public static void main(String[] args) {
 
 		System.out.println(play());
-		System.out.println(playOne()());
+		System.out.println(playOne());
 		System.out.println(playTwo());
 	}
 

@@ -11,7 +11,7 @@ public class FutureLearn {
 
 	public static void main(String... args) throws InterruptedException, ExecutionException {
 
-		Sample s = new Sample();
+		Matrix_Using_Threads s = new Matrix_Using_Threads();
 		s.startPlaying(s);
 	}
 }
@@ -44,15 +44,15 @@ class Offer implements Runnable{
 	
 }
 
-class Sample implements Callable<Sample>{
+class Sample implements Callable<Matrix_Using_Threads>{
 
 	int x;
 	String y;
 
 	@Override
-	public Sample call() throws Exception {
+	public Matrix_Using_Threads call() throws Exception {
 
-		Sample s = new Sample();
+		Matrix_Using_Threads s = new Matrix_Using_Threads();
 		s.x = 3;
 		s.y = "ankit";
 
@@ -62,14 +62,14 @@ class Sample implements Callable<Sample>{
 		return s;
 	}
 
-	public void startPlaying(Sample task) throws InterruptedException, ExecutionException {
+	public void startPlaying(Matrix_Using_Threads task) throws InterruptedException, ExecutionException {
 
 		ExecutorService ex = Executors.newFixedThreadPool(4);
 		
 		// This will use Thread again and when they r available
 		ExecutorService ex2 = Executors.newCachedThreadPool();
 
-		Future<Sample> future = ex.submit(task);
+		Future<Matrix_Using_Threads> future = ex.submit(task);
 
 		// Result will come in 5 seconds
 		

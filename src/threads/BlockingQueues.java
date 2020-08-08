@@ -86,8 +86,6 @@ public class BlockingQueues {
 	public static void main(String[] args) throws InterruptedException {
 
 		BlockingQueues b1 = new BlockingQueues();
-		BlockingQueues b2 = new BlockingQueues();
-
 		b1.play(b1);
 
 	}

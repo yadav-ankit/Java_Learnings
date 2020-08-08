@@ -70,9 +70,16 @@ class Shaadi implements Runnable{
  * 7: Now wait and notify must be called inside a synchronised context only.? why? why can't  you call outside..?
  *   Because: wait( ) means releasing the monitor and go into waiting state till someone(other thread) calls notify( )
  *   so how can you release something until you acquire it? and to acquire lock on the object/monitor you must
- *   go inside a syncrionised block.
+ *   go inside a synchronised block.
  *  
  * 8: Wait( ) , notify( ) , sleep( ) , join( )  all throws checked InterruptedException  so that means whenever you write 
  * 		these methods use try catch.
+ * 9: Suppose you want to pass value to thread..so how would you do that?
+ *   In the class MyThread implements Runnable create a constructor and pass
+ *   final values to it.
+ *   But in this implements scenario you can't pass diff values to diff threads..so for example Thread1 wants value1 , Thread2
+ *   wants value2...not possible. To overcome this
+ *   MyThread extends Thread...and start 50 threads on 50 diff objects. here you can
+ *   pass diff values to diff threads
  * 
  */
