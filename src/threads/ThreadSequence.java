@@ -3,16 +3,16 @@ package threads;
 /*
  * The problem is to synchronize n number of threads using JAVA
  * The idea is take thread count and print 1 in first thread, print 2 in second thread, 
- * print 3 in third thread, ….. print n in nth thread and again repeat from thread 1 infinitely.
+ * print 3 in third thread, â€¦.. print n in nth thread and again repeat from thread 1 infinitely.
  */
 
 /*
  * Solution
- * First decide which to Choose? Single/Shared Runnable , n Threads or use Executors
- * Since we need to pass reminder that is mod N to each thread ...so we need to extend Thread class.
+ * First decide which to Choose? (A)Single/Shared Runnable , (B)n Threads or (C)use Executors
+ * Since we need to pass reminder that is mod N to each thread ...so we need to extend Thread class. Approach (B)
  * 
  * We made lock on a seprate object. we can't use syn(this) becuse we need lock on a shared resource and
- * syn(this) means locking every 25 threads.
+ * syn(this) means locking every 25 threads. and also we made lock object as static, other wise syn(this) and syn(lock) means same thing
  * 
  * Similarly we make num as static since it is a shared resource.
  */
