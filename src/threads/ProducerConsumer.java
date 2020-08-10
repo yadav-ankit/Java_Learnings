@@ -12,6 +12,11 @@ public class ProducerConsumer {
 	static int SIZE = 5;
 	static Queue<Integer> q = new LinkedList<>();
 
+	super();
+	
+	private void ProducerConsumer () {
+		
+	}
 	public static void main(String[] args) throws InterruptedException {
 		Thread producer = new Thread(new Runnable() {
 			@Override

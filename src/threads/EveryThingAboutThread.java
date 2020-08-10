@@ -29,7 +29,7 @@ public class EveryThingAboutThread extends Thread{
 		p2.start();
 		
 		
-		Shaadi s = new Shaadi();
+		SharedRunnableInstance s = new SharedRunnableInstance();
 		
 		Thread t1 = new Thread(s);
 		Thread t2 = new Thread(s);
@@ -45,7 +45,7 @@ public class EveryThingAboutThread extends Thread{
 
 }
 
-class Shaadi implements Runnable{
+class SharedRunnableInstance implements Runnable{
 
 	@Override
 	public void run() {
@@ -60,13 +60,19 @@ class Shaadi implements Runnable{
 /*
  * Findings
  * 1: Extending thread class means only 1 thread can be created per object.
+ * 
  * 2: Implementing runnable interface means multiple thread can run on same/common object..so then comes the problem of
  * 	  wait( ) , notify( ) and syncronization and all.
+ * 
  * 3: If you want to use multiple run methods then better to use Thread t1 = new Thread(new Runnable()  override run());
+ * 
  * 4: wait( ) , notify( ) are object class methods so use Place.wait() or this.wait( ) or wait( ) all are same thing. where Place is 
  * class where run( ) method is present and we are calling wait( ) method.
+ * 
  * 5: Locking: object is locked. and object = Monitor.  (Threads are not locked) 
+ * 
  * 6: Entering inside the syn block means the thread acquired lock on the object.
+ * 
  * 7: Now wait and notify must be called inside a synchronised context only.? why? why can't  you call outside..?
  *   Because: wait( ) means releasing the monitor and go into waiting state till someone(other thread) calls notify( )
  *   so how can you release something until you acquire it? and to acquire lock on the object/monitor you must
@@ -74,6 +80,7 @@ class Shaadi implements Runnable{
  *  
  * 8: Wait( ) , notify( ) , sleep( ) , join( )  all throws checked InterruptedException  so that means whenever you write 
  * 		these methods use try catch.
+ * 
  * 9: Suppose you want to pass value to thread..so how would you do that?
  *   In the class MyThread implements Runnable create a constructor and pass
  *   final values to it.
@@ -82,4 +89,18 @@ class Shaadi implements Runnable{
  *   MyThread extends Thread...and start 50 threads on 50 diff objects. here you can
  *   pass diff values to diff threads
  * 
+ *  10: Exception Handling in thread...
+ *  	 By Default run() method doesn't throw any exception, so all checked exception must be caught using try catch
+ *  	and for Unchecked we have to use exceptionHandler.
+ *  	Note that myThread.setUnCaughtEceptionHandler(new MyHandler())  before starting the thread. 
+ *  
+ *  class LastChanceHandler implements Thread.UncaughtExceptionHandler {
+
+	@Override
+	public void uncaughtException(Thread t, Throwable arg1) {
+
+		System.out.println("Got the exception " + t.getName());
+	}
+
+}
  */

@@ -5,7 +5,11 @@ import java.util.Collections;
 import java.util.List;
 
 public class Matrix_Using_Threads_2 {
-
+	/*
+	 * Here i have extended thread class..because I need to pass diff (row_num) values to diff thread
+	 * If i have to pass same value to all thread class then i can use implements Runnable
+	 * Off course in the second scenario i may have used ThreadLocal but i don't see it how.
+	 */
 	public static void main(String[] args) throws InterruptedException {
 		int rows = 3;
 		MyThread t[] = new MyThread[rows];

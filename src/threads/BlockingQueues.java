@@ -9,6 +9,12 @@ import java.util.concurrent.BlockingQueue;
  */
 public class BlockingQueues {
 
+	
+	
+	/*   
+	 * 
+	 * 
+	 */
 	int array[] = new int[100];
 	int x = 1;
 

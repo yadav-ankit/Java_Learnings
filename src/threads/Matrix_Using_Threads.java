@@ -58,7 +58,7 @@ public class Matrix_Using_Threads {
 		for(Integer i : list) {
 			System.out.print(i + " ");
 		}
-		//System.out.println(list.get(0));
+		System.out.println(list.get(0));
 	}
 
 }
