@@ -10,7 +10,7 @@ public class Matrix_Using_Threads {
 
 	private static Sample s;
 
-	private Matrix_Using_Threads() {
+	Matrix_Using_Threads() {
 	}
 
 	public static Sample getInstance() {

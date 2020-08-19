@@ -11,7 +11,7 @@ package threads;
  * First decide which to Choose? (A)Single/Shared Runnable , (B)n Threads or (C)use Executors
  * Since we need to pass reminder that is mod N to each thread ...so we need to extend Thread class. Approach (B)
  * 
- * We made lock on a seprate object. we can't use syn(this) becuse we need lock on a shared resource and
+ * We made lock on a separate object. we can't use syn(this) because we need lock on a shared resource and
  * syn(this) means locking every 25 threads. and also we made lock object as static, other wise syn(this) and syn(lock) means same thing
  * 
  * Similarly we make num as static since it is a shared resource.
