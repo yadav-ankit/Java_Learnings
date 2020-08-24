@@ -3,6 +3,7 @@ package starting;
 public class CircularQueue {
 
 	CircularQueue prev, next;
+	
 	int data;
 
 	static CircularQueue newNode() {
