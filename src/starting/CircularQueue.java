@@ -19,7 +19,7 @@ public class CircularQueue {
 	public static void printSm(CircularQueue head) {
 		
 		CircularQueue x = head;
-
+  
 		while (x.next != null) {
 			System.out.println(x.next);
 			x = x.next;
